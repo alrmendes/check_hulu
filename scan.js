@@ -1378,9 +1378,9 @@ function generateReport(userInfo, isPartial = false) {
     const tempFile = CONFIG.REPORT_FILE + '.tmp.' + process.pid;
     try {
         console.log(csvContent);
-        fs.writeFileSync(tempFile, csvContent, { encoding: 'utf8', mode: 0o644 });
-        fs.renameSync(tempFile, CONFIG.REPORT_FILE);
-        console.log(`    > CSV saved to: ${CONFIG.REPORT_FILE}`);
+        //fs.writeFileSync(tempFile, csvContent, { encoding: 'utf8', mode: 0o644 });
+        //fs.renameSync(tempFile, CONFIG.REPORT_FILE);
+        //console.log(`    > CSV saved to: ${CONFIG.REPORT_FILE}`);
     } catch (e) {
         // Fallback: direct write
         fs.writeFileSync(CONFIG.REPORT_FILE, csvContent, { encoding: 'utf8', mode: 0o644 });
