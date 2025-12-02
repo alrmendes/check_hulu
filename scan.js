@@ -1377,6 +1377,7 @@ function generateReport(userInfo, isPartial = false) {
     // Write atomically
     const tempFile = CONFIG.REPORT_FILE + '.tmp.' + process.pid;
     try {
+        console.log(csvContent);
         fs.writeFileSync(tempFile, csvContent, { encoding: 'utf8', mode: 0o644 });
         fs.renameSync(tempFile, CONFIG.REPORT_FILE);
         console.log(`    > CSV saved to: ${CONFIG.REPORT_FILE}`);
